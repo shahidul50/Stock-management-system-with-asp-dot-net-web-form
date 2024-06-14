@@ -1,0 +1,226 @@
+﻿.body{
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+   
+}
+.header {
+    margin: 0px;
+    background: #434F45;
+    height: 100px; 
+}
+
+.header h2 {
+    padding-top: 25px;
+    font-family: 'Noto Serif', serif;
+    font-size: 30px;
+}
+.slider{
+    margin: 0px;
+    padding: 0px;
+}
+.slider img{
+    width:100%;
+}
+.Sidebar {
+    background: #647064;
+    height: 550px;
+    width: 25%;
+    float: left;
+}
+.Sidebar h2 {
+    text-align: center;
+    color: #fff;
+    font-family: serif;
+    font-weight: bold;
+    border: 2px solid #7FFFFF;
+    margin-left: 100px;
+    margin-right: 100px;
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 30px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+.Sidebar ul li {
+    list-style: none;
+    margin-left: 90px;
+    line-height: 40px;
+    padding-left: 30px;
+    }
+.Sidebar ul li:hover {
+    background: rgb(104, 119, 144);
+    color: #ffffff;
+    border-radius: 10px 0px 0px 10px;
+}
+
+#active{
+    background: rgb(104, 119, 144);
+    color: #ffffff;
+    border-radius: 10px 0px 0px 10px;  
+}
+
+.Sidebar ul li a:hover {
+    color: white;
+  
+}
+.Sidebar ul li a {
+    text-decoration: none;
+    color:#efd577;
+    font-size: 23px;
+    font-family: Eczar;
+    font-weight: bold;
+    
+}
+.extra {
+    background: #647064;
+}
+.searchcs {
+    height: 400px;
+    width: 670px;
+    padding: 20px;
+}
+
+.mainsection{
+     background: #D0D2CF;
+    
+}
+.loginsections{
+    background: #3a4b6b7d;
+    margin: 25px 270px 36px 460px;
+    padding: 20px;
+    height: 344px;
+    border-radius: 15px 15px 52px 52px;
+    position: absolute;
+}
+.loginlabel {
+    font-size: 25px;
+    margin-right: 22px;
+    color: #fff;
+    font-weight: bold;
+    font-family: serif;
+    margin-left: 0px;
+}
+.logintitle {
+    text-align: center;
+    border-bottom: 2px solid;
+    padding-bottom: 10px;
+    font-family: sans-serif
+
+}
+.loguser {
+    height: 40px;
+    width: 260px;
+    margin-left: -5px;
+    margin-top: 44px;
+}
+.logpass {
+    height: 40px;
+    width: 260px;
+        margin-top: 15px;
+}
+.logbtn {
+    color: #fff;
+    margin-top: 43px;
+    text-align: center;
+    margin-left: 168px;
+    padding: 10px 40px;
+    font-size: 25px;
+    font-family: cursive;
+    font-weight: bold;
+    background: #da1717;
+    border-radius: 10px 10px 10px 10px;
+}
+.output {
+    padding: 25px;
+    text-align: center;
+    color: #ef4040;
+    font-size: 35px;
+    font-family: -webkit-pictograph;
+}
+.welcomecs {
+    text-align: center;
+    height: 100px;
+    margin-top: 220px;
+}
+.welcomecs h2 {
+    font-size: 59px;
+    color: green;
+    font-family: sans-serif;
+    font-weight: bold
+}
+.welcometext {
+   color: crimson;
+    font-size: 55px;
+    border-bottom: 1px solid;
+}
+.mainsectionheader {
+    height:100px;
+}
+
+.mainsectionheader h3 {
+    padding-top: 25px;
+    font-family: 'Noto Serif', serif;
+    font-size: 40px;
+    color: #273178;
+   
+}
+.logout{
+    width:100px;
+    color:#efd577;
+    border:0px #fff;
+    font-size:22px;
+    background: #647064;
+    font-weight: bold;
+}
+.logout:hover{
+    color:#fff;
+    background: rgb(104, 119, 144);
+}
+.tablesection {
+    padding: 16px;
+    padding-left: 460px;
+}
+.mainsection h3 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+.part1 {
+    font-size: 35px;
+    font-family: serif;
+    padding: 30px;
+        margin-bottom: 16px;
+}
+.part2 {
+    height: 50px;
+    width: 250px;
+}
+.sbutton {
+    padding-left: 822px;
+    top: 0px;
+    left: 0px;
+}
+.Gridview {
+    margin-left: 220px;
+}
+.tocalender {
+  margin-top: 50px;
+    background: green;
+}
+.buttongroup{
+    margin-left: 900px;
+    padding: 20px;
+}
+.footer {
+     background: #434F45;
+     height: 70px;
+     width: 100%;
+}
+.footer p {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 30px;
+}

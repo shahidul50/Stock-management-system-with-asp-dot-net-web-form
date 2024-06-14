@@ -1,0 +1,170 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SearchUI.aspx.cs" Inherits="StockManagementSystemWebApp.UI_Design.SearchUI" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Search & View Items Summary</title>
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../Css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Css/main.css" rel="stylesheet" />
+    <script src="../Js/bootstrap.min.js"></script>
+    <script src="../Js/jquery-3.3.1.min.js"></script>
+    <script src="../Js/popper.min.js"></script>
+    
+      <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+</head>
+<body>
+    <form id="form1" runat="server">
+   
+         <div class="container-fluid">
+                 <div class="row">
+                          <div class="header col-sm-12">
+                                <h2 class="text-center text-white">Stock Management System</h2>
+                          </div>
+                </div>
+          </div>
+         <!--Slider Section-->
+          <div class="container-fluid">
+                 <div class="row">
+                         <div class="slider col-sm-12">
+                               <img src="../Images/slider.jpg" alt="Img"  class="img-responsive" />
+                         </div>
+                 </div>
+          </div>
+          
+	<!--main section-->
+          <div class="container-fluid">
+                  <div class="row extra">
+                        <div class="Sidebar col-sm-3 float-left ">
+                                <h2>MENU</h2>
+                                 <ul>
+                                    <li><a href="CategorySetupUI.aspx">Category Setup</a></li>
+                                     <li><a href="CompanySetupUI.aspx">Company Setup</a></li>
+                                     <li><a href="ItemsSetupUI.aspx">Item Setup</a></li>
+                                     <li><a href="StockInUI.aspx">Stock In</a></li>
+                                     <li><a href="StockOutUI.aspx">Stock Out</a></li>
+                                     <li><a href="SearchUI.aspx">Search</a></li>
+                                     <li><a href="ViewUI.aspx">View Sales</a></li>
+                                      <li>
+                                         <asp:Button ID="logoutButton" class="logout" runat="server" Text="Logout" OnClick="logoutButton_OnClick"/> 
+                                     </li>
+                               </ul>
+                        </div>
+                        <div class="mainsection col-sm-9 float-right">
+                 
+                             <div class="row">
+                                  <div class="mainsectionheader  col-sm-12 ">
+                                       <h3 class="text-center">Search & View Items Summary</h3>
+                                  </div>
+                            </div>
+                            
+                             <div class="col-sm-12 text-center text-danger font-weight-bold">
+                                     <asp:Label ID="outputLabel" runat="server" Text=""></asp:Label>
+                            </div>
+
+                                    <div class="tablesection col-sm-12">
+                  
+                                        <table>
+                                            <tr>
+                                                <th class="auto-style1">
+                                                    <asp:Label ID="Label2" runat="server" Text="Company" CssClass="part1"></asp:Label>
+                                                </th>
+                                                <th class="auto-style1">
+                                                    <asp:DropDownList ID="companyDropDownList" runat="server" Height="40px" Width="340px" OnSelectedIndexChanged="companyDropDownList_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
+                                                </th>
+                                            </tr>
+                                            
+                                              <tr>
+                                                <th class="auto-style1">
+                                                    <asp:Label ID="Label1" runat="server" Text="Category" CssClass="part1"></asp:Label>
+                                                </th>
+                                                <th class="auto-style1">
+                                                    <asp:DropDownList ID="categoryDropDownList" runat="server" Height="40px" Width="340px"></asp:DropDownList>
+                                                </th>
+                                            </tr>
+                                            
+                                
+                                        </table>
+                                    
+                                    </div>
+                                         <div class="col-sm-12 sbutton">
+                                              <asp:Button ID="searchButton" runat="server" Text="Search" Width="126px" Height="47px" class="bg-success text-white font-weight-bold " OnClick="searchButton_Click"  />
+                                         </div>
+                            
+                                          <div class="Gridview">
+                                            <br />
+                                              <asp:Panel ID="panelPDF" runat="server">
+                                            <asp:GridView ID="searchResultGridView" runat="server" Height="168px" Width="704px" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+                                                
+                                                <AlternatingRowStyle BackColor="White" />
+                                                
+                                                <Columns>
+                                                       
+                                                       <asp:TemplateField HeaderText="SL" >
+                                                                <ItemTemplate>
+                                                                    <asp:Label runat="server" Width ="100px" Text='<% #Eval("SlNumber")  %>'/>
+                                                            
+                                                                </ItemTemplate>
+                                                       </asp:TemplateField>
+                                                       
+                                                        <asp:TemplateField HeaderText="Item">
+                                                              <ItemTemplate>
+                                                                     <asp:Label  runat="server" Text='<% #Eval("ItemName") %>'/>
+                                                              </ItemTemplate>
+                                                        </asp:TemplateField>
+                                                       
+                                                       <asp:TemplateField HeaderText="Compnay">
+                                                              <ItemTemplate>
+                                                                     <asp:Label  runat="server" Text='<% #Eval("CompanyName") %>'/>
+                                                              </ItemTemplate>
+                                                        </asp:TemplateField>
+                                                    
+                                                    <asp:TemplateField HeaderText="Available Quantity">
+                                                              <ItemTemplate>
+                                                                     <asp:Label  runat="server" Text='<% #Eval("AvailableQuantity") %>'/>
+                                                              </ItemTemplate>
+                                                        </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Reorder Level">
+                                                              <ItemTemplate>
+                                                                     <asp:Label  runat="server" Text='<% #Eval("Reorderlevel") %>'/>
+                                                              </ItemTemplate>
+                                                        </asp:TemplateField>
+                                                        
+                                                   </Columns>
+                                                <EditRowStyle BackColor="#7C6F57" />
+                                                <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                                                <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                                                <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                                                <RowStyle BackColor="#E3EAEB" />
+                                                <SelectedRowStyle BackColor="#C5BBAF" ForeColor="#333333" Font-Bold="True" />
+                                                <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                                                <SortedAscendingHeaderStyle BackColor="#246B61" />
+                                                <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                                                <SortedDescendingHeaderStyle BackColor="#15524A" />
+                                            </asp:GridView>
+                                                  </asp:Panel>
+                                        </div>
+                            <div>
+                                <asp:Button ID="exportButton" runat="server" Text="Report" style="margin-left: 800px; background: goldenrod; margin-top: 18px; font-size: 25px;color:#fff; margin-bottom: 10px;" OnClick="exportButton_Click" />
+                            </div>
+                                   
+
+                        </div>
+                 </div>
+          </div>
+        
+
+        <!-- Footer Section-->
+          <div class="container-fluid">
+                 <div class="row">
+                           <div class="footer col-sm-12">
+                                 <p>CopyRight &copy; 2018</p>
+                           </div>
+                 </div>
+          </div>
+
+    </form>
+</body>
+</html>
